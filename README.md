@@ -8,7 +8,7 @@
 
 ### **Ответ**:
 
-* **`1. Code Install and work Zabix Server / client`**
+* `1. Code Install and work Zabix Server / client`
 
 * **1.1 Install Zabbix repository**
 
@@ -62,7 +62,7 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 http://192.168.1.138/zabbix/setup.php
 ```
 
-* **`2. ScreenShots`**
+* `2. ScreenShots`
 
 ![](img/zab_working.png)
 
@@ -77,7 +77,7 @@ http://192.168.1.138/zabbix/setup.php
 
 ### **Ответ**:
 
-* **`1. Code Install Zabix Agent v2`**
+* `1. Code Install Zabix Agent v2`
 
 * **1.1 Install Repo**
 
@@ -112,7 +112,7 @@ sudo nano zabbix_agent2.conf
 sudo systemctl restart zabbix-agent2
 ```
 
-* **`2. ScreenShots`**
+* `2. ScreenShots`
 
 * **2.1 Configuration > Hosts**
 
