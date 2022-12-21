@@ -1,0 +1,72 @@
+### Install Zabbix repository
+```
+wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4%2Bdebian11_all.deb
+sudo dpkg -i zabbix-release_6.0-4+debian11_all.deb
+sudo apt-get update
+```
+```
+### Install Zabbix server, frontend, agent, PostreSQL
+```
+sudo apt install zabbix-server-pgsql zabbix-frontend-php php7.4-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent
+sudo apt Install postgresql
+```
+####  Create initial database
+```
+sudo -u postgres createuser --pwprompt zabbix # password 12345678
+sudo -u postgres createdb -O zabbix zabbix
+```
+#### On Zabbix server host import initial schema and data. You will be prompted to enter your newly created password.
+
+- zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+
+#### Configure the database for Zabbix server
+** Edit file /etc/zabbix/zabbix_server.conf**
+sudo nano /etc/zabbix/zabbix_server.conf
+- DBPassword=12345678
+
+#### Start Zabbix server and agent processes
+**Start Zabbix server and agent processes and make it start at system boot.**
+```
+sudo systemctl restart zabbix-server zabbix-agent apache2
+sudo systemctl enable zabbix-server zabbix-agent apache2
+```
+#### Join Master work zabbix_server
+```
+http://192.168.1.138/zabbix/setup.php
+```
+#### End SreenShot Working
+
+
+
+
+
+### Install agent
+#### Установаем репозиторий Zabbix
+```
+wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4%2Bdebian11_all.deb
+sudo dpkg -i zabbix-release_6.0-4+debian11_all.deb
+sudo apt update
+```
+#### Установаем Заббикс aгент2
+```
+sudo apt install zabbix-agent2 zabbix-agent2-plugin-*
+```
+#### Запуск процесса Zabbix агента2 и настройте его запуск при загрузке ОС.
+```
+sudo systemctl restart zabbix-agent2
+sudo systemctl enable zabbix-agent2
+```
+#### Включение проверки
+cd /etc/zabbix
+sudo nano zabbix_agent2.conf
+**Ищем Server=
+**Правим ip на 192.168.1.138**
+sudo systemctl restart zabbix-agent2
+
+#### Чтение варлог
+```
+cd /var/log/zabbix
+tail -f zabbix_agent2.log
+```
+**Two Picture**
+
