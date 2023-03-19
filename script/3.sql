@@ -1,4 +1,4 @@
-SELECT payment_id , payment_date , amount
-FROM payment p
-ORDER BY payment_date DESC
+SELECT rental_id , rental_date
+FROM rental
+ORDER BY rental_date DESC
 LIMIT 5;
