@@ -7,6 +7,7 @@
 | 1           | [Script_1](script/1.sql)    |
 | 2           | [Script_2](script/2.sql)    |
 | 2.1         | [Script_2.1](script/2.1.sql)|
+| 3           | [Script_3](script/3.sql)    |
 | 3.1         | [Script_3.1](script/3.1.sql)|
 
 ## Задание 1
