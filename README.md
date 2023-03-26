@@ -43,7 +43,7 @@
 Master BD: 192.168.1.15 worker1
 Stalve BD: 192.168.1.14 master
 
-**Настроим мастер**:
+### **Настроим мастер**:
 
 - sudo nano /etc/mysql/my.cnf
 
@@ -90,13 +90,13 @@ mysqldump -u root -p sakila > sakila.sql
 
 - UNLOCK TABLES;
 
-**Переносим дамп базы на Slave-сервер**
+**Переносим дамп базы на Slave-сервер:**
 
 - scp sakila.sql yarinsky@192.168.1.14:/home/yarinsky
 
-**Настройка Slave**
+### **Настройка Slave**
 
-Созданием базу данных
+**Созданием базу данных:**
 
 - mysql -u root -p
 - CREATE DATABASE sakila;
@@ -105,12 +105,12 @@ mysqldump -u root -p sakila > sakila.sql
 
 - mysql -u root -p sakila < sakila.sql
 
-**Вносим изменения в my.cnf**
+**Вносим изменения в my.cnf:**
 
 - sudo nano  /etc/mysql/my.cnf
 - sudo systemctl restart mysql.service
 
-**Задаем подключение к Master серверу**
+**Задаем подключение к Master серверу:**
 
 - mysql -u root -p
   
