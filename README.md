@@ -108,6 +108,22 @@ mysqldump -u root -p sakila > sakila.sql
 **Вносим изменения в my.cnf:**
 
 - sudo nano  /etc/mysql/my.cnf
+
+```
+pid-file        = /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
+datadir         = /var/lib/mysql
+log-error       = /var/lib/mysql/error.log
+bind-address    = 192.168.1.14
+server-id       = 2
+log_bin         = /var/log/mysql/mysql-bin.log
+max_binlog_size = 500M
+slow_query_log  = 1
+read_only       = 1
+binlog_do_db = sakila
+```
+
+
 - sudo systemctl restart mysql.service
 
 **Задаем подключение к Master серверу:**
@@ -125,7 +141,7 @@ CHANGE MASTER TO MASTER_HOST='192.168.1.15', MASTER_USER='claster_user', MASTER_
 ```
  - START SLAVE;
 
-**Проверяем всё:**
+### **Проверяем всё:**
 
 - show master status \G;
 - show slave status \G;
