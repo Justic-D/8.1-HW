@@ -90,5 +90,7 @@ index
 
 ![](img/zm2.png) 
 
+ Ссылка на лог вывода в тексте: [Log2](script/log2.txt)
+
 ---
 
