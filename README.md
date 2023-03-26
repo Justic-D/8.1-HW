@@ -22,7 +22,7 @@
 
 ![](img/1.png)
 
---
+---
 
 ## Задание 2
 
@@ -73,8 +73,6 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 ![](img/2.4.png)
 
 ![](img/2.5.png)
-
-
 
 ---
 
