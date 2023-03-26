@@ -73,7 +73,7 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 ### 2.2.1 (ПРАВКА)
 
 - Сcылка на скрипт: [Script_2_1](script/2_1.sql)
-- Ссылка на лог вывода в тексте:  
+- Ссылка на лог вывода в тексте: [Log](script/log.txt)
 
 Вывод
 
@@ -83,7 +83,6 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 Далее посидел подумал, а если упростить еще по макс, хотя не считаю это верным но там в целом:
 
 - Сcылка на скрипт: [Script_2.2](script/2.2.sql)
-- Лог в тексте: [Log](script/log.txt)
 
 ![](img/2.4.png)
 
